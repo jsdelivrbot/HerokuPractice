@@ -12,7 +12,7 @@ var app = express();
     pg.connect(process.env.DATABASE_URL, function(err,conn,done){
     if(err) console.log(err);
     conn.query('UPDATE salesfoce.Contact set Phone = $1 WHERE id= $2',
-    [req.body.phone.trim(),req.body.id.trim()],
+    [req.body.phno.trim(),req.body.id.trim()],
     function(err, result){
       done();
       res.json(result);
